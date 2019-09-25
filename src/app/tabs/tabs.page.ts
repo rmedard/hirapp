@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {PouchDBService} from '../+services/pouch-db.service';
 
 @Component({
-  selector: 'app-tabs',
-  templateUrl: 'tabs.page.html',
-  styleUrls: ['tabs.page.scss']
+    selector: 'app-tabs',
+    templateUrl: 'tabs.page.html',
+    styleUrls: ['tabs.page.scss']
 })
-export class TabsPage {
+export class TabsPage implements OnInit {
 
-  constructor() {}
+    constructor(private pouchDBService: PouchDBService) {
+    }
 
+    ngOnInit(): void {
+        this.pouchDBService.remoteDb.info().then((info) => {
+            console.log(info);
+        });
+    }
 }
