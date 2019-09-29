@@ -10,7 +10,7 @@ import {Advert} from '../+models/advert';
 export class HomePage implements OnInit {
     slideOpts: any = {
         speed: 400,
-        slidesPerView: 3
+        slidesPerView: 4
     };
 
     constructor(private pouchDbService: PouchDBService) {
