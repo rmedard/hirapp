@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {PouchDBService} from '../+services/pouch-db.service';
 
 @Component({
     selector: 'app-tabs',
@@ -8,12 +7,9 @@ import {PouchDBService} from '../+services/pouch-db.service';
 })
 export class TabsPage implements OnInit {
 
-    constructor(private pouchDBService: PouchDBService) {
+    constructor() {
     }
 
     ngOnInit(): void {
-        this.pouchDBService.remoteDb.info().then((info) => {
-            console.log(info);
-        });
     }
 }
