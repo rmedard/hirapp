@@ -1,7 +1,9 @@
 <ion-header>
     <ion-toolbar color="primary">
         <ion-buttons slot="end">
-            <ion-button (click)="showFilters()"><ion-icon name="options" size="large"></ion-icon></ion-button>
+            <ion-button (click)="showFilters()">
+                <ion-icon name="options" size="large"></ion-icon>
+            </ion-button>
         </ion-buttons>
         <ion-title>
             Our Properties
@@ -10,54 +12,6 @@
 </ion-header>
 
 <ion-content>
-    <ion-slides [options]="slideOpts">
-        <ion-slide>
-          <ion-card class="category-card">
-            <img src="/assets/categories/house.jpg" />
-            <ion-card-header no-padding>
-              <ion-card-subtitle>Houses</ion-card-subtitle>
-            </ion-card-header>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card class="category-card">
-            <img src="/assets/categories/apartment.jpg" />
-            <ion-card-header no-padding>
-              <ion-card-subtitle>Apartments</ion-card-subtitle>
-            </ion-card-header>
-          </ion-card>
-        </ion-slide>
-        <ion-slide>
-          <ion-card class="category-card">
-            <img src="/assets/categories/office.jpg" />
-            <ion-card-header no-padding>
-              <ion-card-subtitle>Offices</ion-card-subtitle>
-            </ion-card-header>
-          </ion-card>
-        </ion-slide>
-      <ion-slide>
-        <ion-card class="category-card">
-          <img src="/assets/categories/commerce.jpg" />
-          <ion-card-header no-padding>
-            <ion-card-subtitle>Commerce</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card class="category-card">
-          <img src="/assets/categories/room.jpg" />
-          <ion-card-header no-padding>
-            <ion-card-subtitle>Rooms</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card class="category-card">
-          <img src="/assets/categories/land.jpg" />
-          <ion-card-header no-padding>
-            <ion-card-subtitle>Lands</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
+    <app-categories-slide></app-categories-slide>
+    <app-adverts-grid [title]="title"></app-adverts-grid>
 </ion-content>

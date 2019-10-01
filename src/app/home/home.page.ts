@@ -8,10 +8,8 @@ import {Advert} from '../+models/advert';
     styleUrls: ['home.page.scss']
 })
 export class HomePage implements OnInit {
-    slideOpts: any = {
-        speed: 400,
-        slidesPerView: 4
-    };
+
+    title = 'Apartments';
 
     constructor(private pouchDbService: PouchDBService) {
     }
