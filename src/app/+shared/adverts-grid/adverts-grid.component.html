@@ -1,40 +1,14 @@
 <ion-text>{{title}}</ion-text>
-<ion-row align-items-start>
-    <ion-col size="6" size-sm>
+<ion-row class="ion-align-items-start">
+    <ion-col size="6" size-sm *ngFor="let advert of adverts">
+        <p *ngIf="advert.field_advert_picture.length > 0">{{advert.field_advert_picture[0].file_url}}</p>
         <ion-card class="ion-no-margin">
-            <ion-img src="/assets/salon.jpg"></ion-img>
+            <ion-img src="{{advert.field_advert_picture[0].file_url}}" *ngIf="advert.field_advert_picture.length > 0"></ion-img>
             <ion-card-header>
-                <ion-card-title>Title here</ion-card-title>
-                <ion-card-subtitle>SubTitle here...</ion-card-subtitle>
+                <ion-card-title>{{advert.title}}</ion-card-title>
+                <ion-card-subtitle>{{advert.field_advert_sector}}</ion-card-subtitle>
             </ion-card-header>
             <ion-icon [name]="advertSavedClass" size="large" class="advert-saved-btn" color="warning" (click)="toggleSave()"></ion-icon>
-        </ion-card>
-    </ion-col>
-    <ion-col size="6" size-sm>
-        <ion-card class="ion-no-margin">
-            <ion-img src="/assets/salon.jpg"></ion-img>
-            <ion-card-header>
-                <ion-card-title>Title here</ion-card-title>
-                <ion-card-subtitle>SubTitle here...</ion-card-subtitle>
-            </ion-card-header>
-        </ion-card>
-    </ion-col>
-    <ion-col size="6" size-sm>
-        <ion-card class="ion-no-margin">
-            <ion-img src="/assets/salon.jpg"></ion-img>
-            <ion-card-header>
-                <ion-card-title>Title here</ion-card-title>
-                <ion-card-subtitle>SubTitle here...</ion-card-subtitle>
-            </ion-card-header>
-        </ion-card>
-    </ion-col>
-    <ion-col size="6" size-sm>
-        <ion-card class="ion-no-margin">
-            <ion-img src="/assets/salon.jpg"></ion-img>
-            <ion-card-header>
-                <ion-card-title>Title here</ion-card-title>
-                <ion-card-subtitle>SubTitle here...</ion-card-subtitle>
-            </ion-card-header>
         </ion-card>
     </ion-col>
 </ion-row>

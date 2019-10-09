@@ -9,7 +9,7 @@ import {Advert} from '../../+models/advert';
 export class AdvertsGridComponent implements OnInit {
 
     @Input() title: string;
-    adverts: Advert[];
+    @Input() adverts: Advert[];
     advertSavedClass = 'heart-empty';
 
     constructor() {
@@ -18,7 +18,7 @@ export class AdvertsGridComponent implements OnInit {
     ngOnInit() {
     }
 
-  toggleSave() {
-    this.advertSavedClass = this.advertSavedClass === 'heart-empty' ? 'heart' : 'heart-empty';
-  }
+    toggleSave() {
+        this.advertSavedClass = this.advertSavedClass === 'heart-empty' ? 'heart' : 'heart-empty';
+    }
 }

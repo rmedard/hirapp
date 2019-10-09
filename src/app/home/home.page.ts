@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PouchDBService} from '../+services/pouch-db.service';
 import {Advert} from '../+models/advert';
+import {AdvertImage} from '../+models/advert-image';
 
 @Component({
     selector: 'app-home',
@@ -10,6 +11,7 @@ import {Advert} from '../+models/advert';
 export class HomePage implements OnInit {
 
     title = 'Apartments';
+    adverts: Advert[] = [];
 
     constructor(private pouchDbService: PouchDBService) {
     }
@@ -26,8 +28,10 @@ export class HomePage implements OnInit {
                 field_advert_type: {$eq: 'rent'}
             }
         }).then(result => {
-            const adverts = result as Advert[];
-            console.log(adverts);
+            result.docs.forEach(x => {
+                this.adverts.push(x as Advert);
+            });
+            console.log(this.adverts);
         }).catch(error => console.log(error));
     }
 
