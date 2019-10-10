@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PouchDBService} from '../+services/pouch-db.service';
 import {Advert} from '../+models/advert';
-import {AdvertImage} from '../+models/advert-image';
 
 @Component({
     selector: 'app-home',
